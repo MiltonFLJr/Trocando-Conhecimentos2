@@ -96,7 +96,7 @@
 
 
 <div class="login">
-<form action="loginCadastro.php" method="POST">
+<form action="TELALGDmeusLivros.php" method="POST">
     <p>E-mail:<input type="text" name="email"></p>
    <p> Senha: <input type="password" name="senha"></p>
     <p><input type="submit" value="Enviar"></p>

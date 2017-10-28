@@ -148,21 +148,63 @@ public function criarConta(){
    
    $stmt->execute();
    
-   echo "<script>";
+   echo "<script languague='javascript'>";
    echo "window.alert('O cadastro foi concluído!')";
+   echo "</script>";
+   
+   echo "<script languague='javascript'>";
+   echo "location.href('TELAloginCadastro.php')";
    echo "</script>";
    
     }catch(PDOException $e){
       
-    
-     echo "<script>";
-   echo "window.alert('Houve um erro ao efetuar o cadastro.')";
-   echo "</script>";
-   
-        //echo "ERROR: ". $e->getMessage();
+    echo "ERROR: ". $e->getMessage();
         
     }
    
+}
+
+public function consultarConta(){
+    
+    $email = $this->getEmailContaUsuario();
+    $senha = $this->getSenhaContaUsuario();
+    include 'conexao.php';
+    
+try{
+    
+    $stmt = $con->prepare("SELECT email,senha FROM usuario WHERE email=? AND senha=?");
+    $stmt->bindParam(1,$email);
+    $stmt->bindParam(2,$senha);
+    $stmt->execute();
+    
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    if(count($users) <= 0){
+                    
+                    echo "<script language='javascript'>";
+                    echo "window.alert('O e-mail ou senha estão incorretos, tente novamente!')";
+                    echo "</script>";
+                    
+        echo "<script language='javascript'>";
+        echo "location.href='TELAloginCadastro.php'";
+        echo "</script>";
+        
+           //header("Location:TELAloginCadastro.php");
+ 
+    }else{
+       
+        echo "<p>";        
+        echo "Bem-vindo!";
+        echo "<p>"; 
+
+    }
+    
+} catch (Exception $ex) {
+
+        echo "ERROR: ". $e->getMessage();
+    
+}    
+       
 }
 
 public function excluirConta(){

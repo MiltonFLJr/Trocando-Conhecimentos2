@@ -3,6 +3,19 @@
 
   <head>
 
+      <?php 
+      
+      require_once 'CLASSEUsuario.php';
+      
+      $email=$_POST['email'];
+      $senha=$_POST['senha'];
+      
+      $usuario = new Usuario(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$email, $senha);
+      
+      $usuario->consultarConta();
+      
+      ?>
+      
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -12,27 +25,6 @@
     
     <title>Início</title>
 
-     <?php
-
-      require_once 'CLASSEUsuario.php';
-      
-    $cpf = $_POST['cpf'];
-    $rg = $_POST['rg'];
-    $nome = $_POST['nome'];
-    $dtn = $_POST['dtn'];
-    $telefone = $_POST['telefone'];
-    $endereco= $_POST['endereco'];
-    $nomeMae= $_POST['nomemae'];
-    $nomePai=$_POST['nomepai'];
-    $email=$_POST['email'];
-    $senha=$_POST['senha'];
-    
-    $usuario = new Usuario($cpf, $rg, $nome, $dtn, $telefone, $endereco, $nomeMae, $nomePai, $email, $senha);
-    
-    $usuario->criarConta();
-      
-      ?>
-    
     <!-- Bootstrap core CSS -->
     <link href="/PJTCC/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -52,8 +44,7 @@
   </head>
 
   <body>
-      
-      
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -71,13 +62,13 @@
         
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="TELAindex.php">Início
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Início
+                <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#">Entrar</a>
-              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Institucional</a>
@@ -90,44 +81,21 @@
       </div>
     </nav>
 
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
+   <p>TELA LIMPA!</p>
 
-<div class="cadastroimg">
-<img src="/PJTCC/vendor/imagens/cadastroicon.png" width="150" height="110">
-</div>
-<div class="cadastro">
-  <form action="TELAvalidandoCadastro.php" method="POST">
-      <p>CPF: <input type="text" name="cpf" required="Campo obrigatório!"> </p>
-   <p> RG:<input type="text" name="rg" required></p>
-  <p>  Nome:<input type="text" name="nome" required></p>
-  <p>  Data de nascimento:<input type="date" name="dtn" required></p>
-  <p>  Telefone:<input type="text" name="telefone" required></p>
-  <p>  Endereço:<input type="text" name="endereco" required></p>
-   <p> Nome da mãe:<input type="text" name="nomemae" required></p>
-  <p>  Nome do Pai:<input type="text" name="nomepai" required></p>
-  <p>  E-mail:<input type="text" name="email" required></p>
-   <p> Senha: <input type="password" name="senha" required></p>
-
- <p><input type="submit" value="Enviar"></p><p>
-  </form>
-</div>
-
-<div class="loginimg">
-<img src="/PJTCC/vendor/imagens/loginicon.png" width="145" height="105">
-</div>
-
-
-
-<div class="login">
-<form action="loginCadastro.php" method="POST">
-    <p>E-mail:<input type="text" name="email"></p>
-   <p> Senha: <input type="password" name="senha"></p>
-    <p><input type="submit" value="Enviar"></p>
-  </form>
-</div>
-
-<p><h4>Ultimos livros adicinionados!</h4></p>
-
-<p><h4>SELECT NO BANCO PARA VER OS ULTIMOS LIVROS ADICIONADOS</h4></p>
     
     <!-- Page Content -->
     <!-- SEM USO! 
