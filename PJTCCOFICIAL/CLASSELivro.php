@@ -428,7 +428,7 @@ public function consultarMeuLivro(){
         
         echo "<tr>";
         echo "<td>";
-        echo "<img src='/capaslivros/$capa' width='120' height='150' ";
+        echo "<img src='/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/capaslivros/$capa' width='120' height='150' ";
         echo "</td>";
         
         echo "<td>";
@@ -649,7 +649,7 @@ public function PesquisarLivroParaTrocar($info){
         
         echo "<tr>";
         echo "<td>";
-        echo "<img src='/capaslivros/$capa' width='120' height='150' ";
+        echo "<img src='/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/capaslivros/$capa' width='120' height='150' ";
         echo "</td>";
         
         echo "<td>";

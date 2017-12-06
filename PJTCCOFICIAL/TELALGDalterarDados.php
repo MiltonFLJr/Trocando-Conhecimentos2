@@ -17,9 +17,9 @@ and open the template in the editor.
   <title>Início</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/boostrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/vendor/bootstrap/css/bootstrap.min.css">
+  <script src="/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/vendor/jquery/jquery.min.js"></script>
+  <script src="/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/vendor/boostrap/js/bootstrap.min.js"></script>
   
   <style>
       
@@ -145,7 +145,7 @@ and open the template in the editor.
             echo "</tr>";
             echo "</center>";
             echo "<td>";
-            echo "<img id='imgavatarEA' src='/avataresus/$avatar' height='180' width='160'>";
+            echo "<img id='imgavatarEA' src='/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/avataresus/$avatar' height='180' width='160'>";
             echo "</td>";
             
             //AVATAR

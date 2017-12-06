@@ -28,7 +28,7 @@ while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
           echo  "<tr>";
           
           echo  "<td>";
-        echo "<img width='120' height='150' src='/capaslivros/$capa'>";
+        echo "<img width='120' height='150' src='/Trocando-Conhecimentos2/Trocando-Conhecimentos2/PJTCCOFICIAL/capaslivros/$capa'>";
        echo "</td>";
        
         echo  "<td>";

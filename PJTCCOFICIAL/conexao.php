@@ -1,7 +1,7 @@
 <?php
 
-$user = "id2832453_ernandespapa91";
-$password = "trocadelivro";
+$user = "root";
+$password = "";
 
 try{
     
