@@ -1,16 +1,16 @@
 <?php
-$user = "root";
-$password = "";
 
-/* try{ */
+$user = "id2832453_ernandespapa91";
+$password = "trocadelivro";
+
+try{
     
-$con = new PDO('mysql:host=localhost;dbname=nova',$user,$password);
-$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+$con = new PDO('mysql:host=localhost;dbname=id2832453_trocalivro',$user,$password);
+$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-/*
-}catch(PDOException $e){
-      echo "ERROR: ".$e->getMessage();
+} catch (Exception $ex) {
+
+   echo "ERROR: ". $ex->getMessage();
+   
 }
- 
- */
 ?>

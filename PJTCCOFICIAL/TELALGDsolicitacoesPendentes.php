@@ -10,16 +10,12 @@ and open the template in the editor.
    <head>
 
        <?php 
-  
+  include 'ocultarerros.php';
    include 'CDiniciarSessao.php'; 
-   include 'ocultarerros.php';
-         ?>
-       <style> 
-       #meuslivrosc{
-          text-shadow:1px 0px #0F06FF;
-      }
-      </style>
-  <title>Meus livros cadastrados</title>
+   
+       ?>
+       
+  <title>Solicitações pendentes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
@@ -46,30 +42,28 @@ and open the template in the editor.
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: blue;
+    background-color: #4CAF50;
     color: white;
 }
 </style>
-  
+<style>
+#solicitacoespendentes{
+          text-shadow:1px 0px #0F06FF;
+      }
+</style>
   <?php
  
- //if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
+  if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
        
- // }else{
+  }else{
      
-     /*
            echo "<html>";
    echo "<head>";
    echo "<meta http-equiv='refresh' content='0;url=TELAlogin.php'>";
    echo "</head>";
     echo "</html>"; 
-    */
-    
-    // echo "<script languague='javascript'>";
-//  echo "location.href='TELAlogin.php'";
- // echo "</script>";
       
- // }
+  }
   
   ?>
 </head>
@@ -87,7 +81,7 @@ and open the template in the editor.
   <button class="dropbtn">Livros</button>
   <div class="dropdown-content">
     <a href="TELALGDcadastrarMeusLivros.php">Cadastrar meus livros</a>
-    <a href="#">Gerenciar meus livros</a>
+    <a href="TELALGDmeusLivros.php">Gerenciar meus livros</a>
     <a href="TELALGDsolicitacoesPendentes.php">Solicitações de troca</a>
     <a href="TELALGDhistoricoTrocas.php">Histórico de trocas</a>
   </div>
@@ -121,16 +115,14 @@ and open the template in the editor.
   </div>
 </nav>
         
-      
-    <center><h3 id='meuslivrosc'>Meus Livros cadastrados</h3></center>
-        
+    <center><h3 id='solicitacoespendentes'> Solicitaçoẽs pendentes</h3></center>
         <?php
         
-        require_once 'CLASSELivro.php';
+        require_once 'CLASSETrocaLivro.php';
         
-   $livro = new Livro();
+   $livro = new TrocaLivro();
    
-   $livro->consultarMeuLivro();
+   $livro->consultarTrocaLivro();
         
         ?>
         

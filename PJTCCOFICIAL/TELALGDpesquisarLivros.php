@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -8,18 +7,16 @@ and open the template in the editor.
 <html>
     
    <head>
+       
+<?php
+       
+       include 'CDiniciarSessao.php';
+       
+       include 'ocultarerros.php';
 
-       <?php 
-  
-   include 'CDiniciarSessao.php'; 
-   include 'ocultarerros.php';
-         ?>
-       <style> 
-       #meuslivrosc{
-          text-shadow:1px 0px #0F06FF;
-      }
-      </style>
-  <title>Meus livros cadastrados</title>
+       ?>
+       
+  <title>Início</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
@@ -46,32 +43,27 @@ and open the template in the editor.
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: blue;
+    background-color: #4CAF50;
     color: white;
 }
 </style>
   
   <?php
- 
- //if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
-       
- // }else{
-     
+
+  if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
+      
+  }else{
      /*
-           echo "<html>";
+          echo "<html>";
    echo "<head>";
    echo "<meta http-equiv='refresh' content='0;url=TELAlogin.php'>";
    echo "</head>";
-    echo "</html>"; 
-    */
-    
-    // echo "<script languague='javascript'>";
-//  echo "location.href='TELAlogin.php'";
- // echo "</script>";
-      
- // }
+    echo "</html>";   
+      */
+  }
   
   ?>
+
 </head>
 
     <body class="body">
@@ -87,8 +79,8 @@ and open the template in the editor.
   <button class="dropbtn">Livros</button>
   <div class="dropdown-content">
     <a href="TELALGDcadastrarMeusLivros.php">Cadastrar meus livros</a>
-    <a href="#">Gerenciar meus livros</a>
-    <a href="TELALGDsolicitacoesPendentes.php">Solicitações de troca</a>
+    <a href="TELALGDmeusLivros">Gerenciar meus livros</a>
+    <a href="TELALGDsolicitacoesPendentes">Solicitações de troca</a>
     <a href="TELALGDhistoricoTrocas.php">Histórico de trocas</a>
   </div>
 </div>    
@@ -107,7 +99,7 @@ and open the template in the editor.
       <li><a href="#">Contato</a></li>
     </ul>
       
-       <form class="navbar-form navbar-left"  action="TELALGDpesquisarLivros.php" method="POST">
+         <form class="navbar-form navbar-left"  action="TELALGDpesquisarLivros.php" method="POST">
       <div>
         <input type="text" class="form-control" placeholder="Procurar" name="info">
         <input type="submit" value="Pesquisar">
@@ -115,22 +107,22 @@ and open the template in the editor.
        </form>
       
     <ul class="nav navbar-nav navbar-right">
-        <li><a> <?php echo "Bem-vindo, ".$_SESSION['nome'] ?> </a></li>
+        <li><a> <?php echo "Bem-vindo, ".$_SESSION['nome']; ?> </a></li>
         <li><a href="CDencerrarSecao.php">Sair</a></li>
     </ul>
   </div>
 </nav>
         
       
-    <center><h3 id='meuslivrosc'>Meus Livros cadastrados</h3></center>
-        
         <?php
         
         require_once 'CLASSELivro.php';
         
+        $infol=$_POST['info'];
+        
    $livro = new Livro();
    
-   $livro->consultarMeuLivro();
+   $livro->PesquisarLivroParaTrocar($infol);
         
         ?>
         
